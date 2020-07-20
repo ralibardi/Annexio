@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Annexio.Models.Country>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Region</th>
+            <th scope="col">Sub-Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var country in @Model)
+        {
+            <tr class="table-dark">
+                <td>@country.Name</td>
+                <td>@country.Region</td>
+                <td>@country.SubRegion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

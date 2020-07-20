@@ -10,8 +10,5 @@ namespace Annexio.Models
         public string SubRegion { get; set; }
         public string Capital { get; set; }
         public long Population { get; set; }
-        public IEnumerable<string> Currencies { get; set; }
-        public IEnumerable<string> Languages { get; set; }
-        public IEnumerable<string> Neighbours { get; set; }
     }
 }
