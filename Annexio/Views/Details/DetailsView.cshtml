@@ -1,0 +1,39 @@
+﻿@model Annexio.Models.Details
+
+    <div id="details" class="jumbotron">
+        <h1 class="display-3">@Model.Id</h1>
+        <h2 class="display-2">@Model.Capital</h2>
+        <p class="lead">Population: @Model.Population</p>
+        <hr class="my-4">
+
+        <ul id="currency-list" class="list-group">
+            @foreach (var currency in @Model.Currencies)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @currency.Name
+                </li>
+            }
+        </ul>
+
+        <ul id="languages-list" class="list-group">
+            @foreach (var language in @Model.Languages)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @language.Name
+                </li>
+            }
+        </ul>
+
+        <ul id="border-list" class="list-group">
+            @foreach (var border in @Model.Borders)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @border
+                </li>
+            }
+        </ul>
+
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" onclick="history.go(-1);" role="button">Go back</a>
+        </p>
+    </div>

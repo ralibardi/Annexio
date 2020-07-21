@@ -36,3 +36,10 @@ D:\Repos\C#\Annexio\Annexio.Tests\obj\Debug\Annexio.Tests.csproj.CoreCompileInpu
 D:\Repos\C#\Annexio\Annexio.Tests\obj\Debug\Annexio.Tests.csproj.CopyComplete
 D:\Repos\C#\Annexio\Annexio.Tests\obj\Debug\Annexio.Tests.dll
 D:\Repos\C#\Annexio\Annexio.Tests\obj\Debug\Annexio.Tests.pdb
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\Unity.Container.dll
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\Unity.Mvc5.dll
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\Unity.Abstractions.dll
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\Unity.Container.pdb
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\Unity.Abstractions.pdb
+D:\Repos\C#\Annexio\Annexio.Tests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

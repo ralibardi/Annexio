@@ -1,33 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Annexio.Clients;
 using Annexio.Models;
-using Newtonsoft.Json;
 
 namespace Annexio.Controllers
 {
     public class CountriesController : Controller
     {
-        // GET: Countries
-        public async Task<ViewResult> IndexAsync()
-        {
-            var countries = await GetCountries();
+        private readonly ICountriesHttpClient _client;
 
-            return View(countries ?? new List<Country>());
+        public CountriesController(ICountriesHttpClient client)
+        {
+            _client = client ?? throw new ArgumentNullException(nameof(client));
         }
 
-        private static async Task<List<Country>> GetCountries()
+        // GET: Countries
+        public async Task<ViewResult> IndexAsync(int id)
         {
-            using (var client = new HttpClient())
-            {
-                var result = await client.GetAsync(new Uri("https://restcountries.eu/rest/v2/all"));
-                result.EnsureSuccessStatusCode();
-                var responseBody = await result.Content.ReadAsStringAsync();
+            var countries = await _client.GetCountriesSubsetAsync(id, 10);
 
-                return JsonConvert.DeserializeObject<List<Country>>(responseBody);
-            }
+            return View(countries ?? new List<Country>());
         }
     }
 }

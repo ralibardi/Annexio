@@ -1,0 +1,13 @@
+﻿@model Annexio.Models.Details
+@{
+    ViewBag.Title = "SubRegionDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1 class="display-4">Sub-region:</h1>
+    @{
+        Html.RenderPartial("DetailsView", @Model);
+    }
+</div>
+

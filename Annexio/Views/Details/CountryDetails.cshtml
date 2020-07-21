@@ -1,0 +1,12 @@
+﻿@model Annexio.Models.Details
+@{
+    ViewBag.Title = "CountryDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div>
+        <h1 class="display-4">Country:</h1>
+        @{
+            Html.RenderPartial("DetailsView", @Model);
+        }
+    </div>

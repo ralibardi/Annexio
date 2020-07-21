@@ -57,3 +57,13 @@ D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.csproj.CoreCompileInputs.cache
 D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.csproj.CopyComplete
 D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.dll
 D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.pdb
+D:\Repos\C#\Annexio\Annexio\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Repos\C#\Annexio\Annexio\bin\Unity.Abstractions.dll
+D:\Repos\C#\Annexio\Annexio\bin\Unity.Container.dll
+D:\Repos\C#\Annexio\Annexio\bin\Unity.Mvc5.dll
+D:\Repos\C#\Annexio\Annexio\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Repos\C#\Annexio\Annexio\bin\Unity.Abstractions.pdb
+D:\Repos\C#\Annexio\Annexio\bin\Unity.Container.pdb
+D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.csprojAssemblyReference.cache
+D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.Resources.resources
+D:\Repos\C#\Annexio\Annexio\obj\Debug\Annexio.csproj.GenerateResource.cache
