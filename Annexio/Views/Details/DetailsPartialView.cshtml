@@ -1,0 +1,88 @@
+﻿@model Annexio.Models.RegionDetails
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#currencies">Currencies</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#languages">Languages</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#countries">Countries</a>
+        </li>
+        @if (@Model.Regions.Any())
+        {
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#regions">Regions</a>
+            </li>
+        }
+        @if (@Model.SubRegions.Any())
+        {
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#subregions">Sub-regions</a>
+            </li>
+        }
+    </ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade show active" id="home">
+        <h1 class="display-3">@Model.Name</h1>
+        <p class="lead">Population: @Model.Population</p>
+    </div>
+    <div class="tab-pane fade" id="currencies">
+        <ul id="currency-list" class="list-group">
+            @foreach (var currency in @Model.Currencies)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @currency.Name
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="languages">
+        <ul id="languages-list" class="list-group">
+            @foreach (var language in @Model.Languages)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @language.Name
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="countries">
+        <ul id="countries-list" class="list-group">
+            @foreach (var country in @Model.Countries)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href=@Url.Action("CountryDetails", "Details", new { countryName = @country })>@country</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="regions">
+        <ul id="regions-list" class="list-group">
+            @foreach (var region in @Model.Regions)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href=@Url.Action("RegionDetails", "Details", new { regionName = @region })>@region</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="tab-pane fade" id="subregions">
+        <ul id="subregions-list" class="list-group">
+            @foreach (var subRegion in @Model.SubRegions)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href=@Url.Action("SubRegionDetails", "Details", new { subRegionName = @subRegion })>@subRegion</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<p class="lead">
+    <a class="btn btn-primary btn-lg" onclick="history.go(-1);" role="button">Go back</a>
+</p>

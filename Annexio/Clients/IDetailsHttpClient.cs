@@ -6,7 +6,7 @@ namespace Annexio.Clients
 {
     public interface IDetailsHttpClient
     {
-        Task<CountryDetails> GetDetailsFromCountryAsync(string countryName);
+        Task<BasicDetails> GetDetailsFromCountryAsync(string countryName);
         Task<List<BasicDetails>> GetDetailsFromRegionAsync(string regionName);
         Task<List<BasicDetails>> GetDetailsFromSubRegionAsync(string subRegionName);
 

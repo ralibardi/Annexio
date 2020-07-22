@@ -24,7 +24,7 @@ namespace Annexio.Controllers
         }
 
         // GET: Country BasicDetails
-        public async Task<ViewResult> BasicDetails(string regionName)
+        public async Task<ViewResult> RegionDetails(string regionName)
         {
             var region = await _mediator.GetRegionDetails(regionName);
             region.Name = regionName;
@@ -33,7 +33,7 @@ namespace Annexio.Controllers
         }
 
         // GET: Country BasicDetails
-        public async Task<ViewResult> BasicDetails(string subRegionName)
+        public async Task<ViewResult> SubRegionDetails(string subRegionName)
         {
             var subRegion = await _mediator.GetSubRegionDetails(subRegionName);
             subRegion.Name = subRegionName;

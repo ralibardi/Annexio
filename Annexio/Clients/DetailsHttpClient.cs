@@ -18,10 +18,10 @@ namespace Annexio.Clients
             _uriBuilder = uriBuilder ?? throw new ArgumentNullException(nameof(uriBuilder));
         }
 
-        public async Task<CountryDetails> GetDetailsFromCountryAsync(string countryName)
+        public async Task<BasicDetails> GetDetailsFromCountryAsync(string countryName)
         {
             _uriBuilder.Reset();
-            var uriBuilder = _uriBuilder.WithCountryName(countryName).FilterByModel(typeof(CountryDetails));
+            var uriBuilder = _uriBuilder.WithCountryName(countryName).FilterByModel(typeof(BasicDetails));
 
             using (var client = new HttpClient())
             {
@@ -29,7 +29,7 @@ namespace Annexio.Clients
                 result.EnsureSuccessStatusCode();
                 var responseBody = await result.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<List<CountryDetails>>(responseBody).FirstOrDefault();
+                return JsonConvert.DeserializeObject<List<BasicDetails>>(responseBody).FirstOrDefault();
             }
         }
 

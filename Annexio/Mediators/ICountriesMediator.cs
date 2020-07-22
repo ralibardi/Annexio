@@ -9,7 +9,7 @@ namespace Annexio.Mediators
         Task<IEnumerable<Country>> GetAllCountries();
         Task<IEnumerable<Country>> GetCountriesSubSet(int index, int length);
         Task<BasicDetails> GetCountryDetails(string countryName);
-        Task<BasicDetails> GetRegionDetails(string regionName);
-        Task<BasicDetails> GetSubRegionDetails(string subRegionName);
+        Task<RegionDetails> GetRegionDetails(string regionName);
+        Task<RegionDetails> GetSubRegionDetails(string subRegionName);
     }
 }

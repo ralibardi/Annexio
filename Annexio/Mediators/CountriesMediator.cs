@@ -38,30 +38,44 @@ namespace Annexio.Mediators
         public async Task<BasicDetails> GetCountryDetails(string countryName)
         {
             var country = await _detailsHttpClient.GetDetailsFromCountryAsync(countryName);
-            country.IsCountry = true;
 
             return country;
         }
 
-        public async Task<BasicDetails> GetRegionDetails(string regionName)
+        public async Task<RegionDetails> GetRegionDetails(string regionName)
         {
             var detailsList = await _detailsHttpClient.GetDetailsFromRegionAsync(regionName);
 
-            var region = new BasicDetails
+            var region = new RegionDetails
             {
                 Name = regionName,
                 Population = detailsList.Select(r => r.Population).Sum(),
                 Languages = detailsList.SelectMany(r => r.Languages).Distinct(),
                 Currencies = detailsList.SelectMany(r => r.Currencies).Distinct(),
-                //Region = detailsList.SelectMany(r => r.Region).Distinct()
+                SubRegions = detailsList.Select(r => r.Subregion).Distinct(),
+                Countries = detailsList.Select(r => r.Name).Distinct(),
+                Regions = new List<string>()
             };
 
             return region;
         }
 
-        public async Task<BasicDetails> GetSubRegionDetails(string subRegionName)
+        public async Task<RegionDetails> GetSubRegionDetails(string subRegionName)
         {
-            throw new System.NotImplementedException();
+            var detailsList = await _detailsHttpClient.GetDetailsFromRegionAsync(subRegionName);
+
+            var region = new RegionDetails
+            {
+                Name = subRegionName,
+                Population = detailsList.Select(r => r.Population).Sum(),
+                Languages = detailsList.SelectMany(r => r.Languages).Distinct(),
+                Currencies = detailsList.SelectMany(r => r.Currencies).Distinct(),
+                Regions = detailsList.Select(r => r.Region).Distinct(),
+                Countries = detailsList.Select(r => r.Name).Distinct(),
+                SubRegions = new List<string>()
+            };
+
+            return region;
         }
     }
 }
