@@ -6,13 +6,13 @@ namespace Annexio.Tests.Controllers
     public class CountriesControllerTest
     {
         //[TestMethod]
-        //public void IndexAsync()
+        //public void CountriesTable()
         //{
         //    // Arrange
         //    var controller = new CountriesController();
 
         //    // Act
-        //    var result = controller.IndexAsync() as ViewResult;
+        //    var result = controller.CountriesTable() as ViewResult;
 
         //    // Assert
         //    Assert.IsNotNull(result);

@@ -1,0 +1,20 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Annexio.Models.Country>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    Html.RenderPartial("CountriesTable", @Model);
+}
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, 
+    page => Url.Action("Index", new { pageIndex = page }), 
+    new PagedListRenderOptions()
+        {
+            
+        }
+    )
+
