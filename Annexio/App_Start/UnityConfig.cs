@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using Annexio.Builders;
 using Annexio.Clients;
+using Annexio.Mediators;
 using Unity;
 using Unity.Mvc5;
 
@@ -19,9 +20,10 @@ namespace Annexio
             
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
+            container.RegisterType<IRestCountriesUriBuilder, RestCountriesUriBuilder>();
             container.RegisterType<ICountriesHttpClient, CountriesHttpClient>();
             container.RegisterType<IDetailsHttpClient, DetailsHttpClient>();
-            container.RegisterType<IRestCountriesUriBuilder, RestCountriesUriBuilder>();
+            container.RegisterType<ICountriesMediator, CountriesMediator>();
         }
     }
 }

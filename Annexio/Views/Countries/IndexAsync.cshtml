@@ -20,10 +20,10 @@
                 <a href=@Url.Action("CountryDetails", "Details", new { countryName = @country.Name })>@country.Name</a>
             </td>
             <td>
-                <a href=@Url.Action("RegionDetails", "Details", new { regionName = @country.Region })>@country.Region</a>
+                <a href=@Url.Action("BasicDetails", "Details", new { regionName = @country.Region })>@country.Region</a>
             </td>
             <td>
-                <a href=@Url.Action("SubRegionDetails", "Details", new { subRegionName = @country.Subregion })>@country.Subregion</a>
+                <a href=@Url.Action("BasicDetails", "Details", new { subRegionName = @country.Subregion })>@country.Subregion</a>
             </td>
         </tr>
         }

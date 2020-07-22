@@ -1,42 +1,42 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Annexio.Clients;
+using Annexio.Mediators;
 
 namespace Annexio.Controllers
 {
     public class DetailsController : Controller
     {
-        private readonly IDetailsHttpClient _client;
+        private readonly ICountriesMediator _mediator;
 
-        public DetailsController(IDetailsHttpClient client)
+        public DetailsController(ICountriesMediator mediator)
         {
-            _client = client ?? throw new ArgumentNullException(nameof(client));
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        // GET: Country Details
+        // GET: Country BasicDetails
         public async Task<ViewResult> CountryDetails(string countryName)
         {
-            var country = await _client.GetDetailsFromCountryAsync(countryName);
-            country.Id = countryName;
+            var country = await _mediator.GetCountryDetails(countryName);
+            country.Name = countryName;
 
             return View(country);
         }
 
-        // GET: Country Details
-        public async Task<ViewResult> RegionDetails(string regionName)
+        // GET: Country BasicDetails
+        public async Task<ViewResult> BasicDetails(string regionName)
         {
-            var region = await _client.GetDetailsFromRegionAsync(regionName);
-            region.Id = regionName;
+            var region = await _mediator.GetRegionDetails(regionName);
+            region.Name = regionName;
 
             return View(region);
         }
 
-        // GET: Country Details
-        public async Task<ViewResult> SubRegionDetails(string subRegionName)
+        // GET: Country BasicDetails
+        public async Task<ViewResult> BasicDetails(string subRegionName)
         {
-            var subRegion = await _client.GetDetailsFromSubRegionAsync(subRegionName);
-            subRegion.Id = subRegionName;
+            var subRegion = await _mediator.GetSubRegionDetails(subRegionName);
+            subRegion.Name = subRegionName;
 
             return View(subRegion);
         }

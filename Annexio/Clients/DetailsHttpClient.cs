@@ -18,10 +18,10 @@ namespace Annexio.Clients
             _uriBuilder = uriBuilder ?? throw new ArgumentNullException(nameof(uriBuilder));
         }
 
-        public async Task<Details> GetDetailsFromCountryAsync(string countryName)
+        public async Task<CountryDetails> GetDetailsFromCountryAsync(string countryName)
         {
             _uriBuilder.Reset();
-            var uriBuilder = _uriBuilder.WithCountryName(countryName).FilterByModel(typeof(Details));
+            var uriBuilder = _uriBuilder.WithCountryName(countryName).FilterByModel(typeof(CountryDetails));
 
             using (var client = new HttpClient())
             {
@@ -29,14 +29,14 @@ namespace Annexio.Clients
                 result.EnsureSuccessStatusCode();
                 var responseBody = await result.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<List<Details>>(responseBody).FirstOrDefault();
+                return JsonConvert.DeserializeObject<List<CountryDetails>>(responseBody).FirstOrDefault();
             }
         }
 
-        public async Task<Details> GetDetailsFromRegionAsync(string regionName)
+        public async Task<List<BasicDetails>> GetDetailsFromRegionAsync(string regionName)
         {
             _uriBuilder.Reset();
-            var uriBuilder = _uriBuilder.WithRegionName(regionName).FilterByModel(typeof(Details));
+            var uriBuilder = _uriBuilder.WithRegionName(regionName).FilterByModel(typeof(BasicDetails));
 
             using (var client = new HttpClient())
             {
@@ -44,14 +44,14 @@ namespace Annexio.Clients
                 result.EnsureSuccessStatusCode();
                 var responseBody = await result.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<List<Details>>(responseBody).FirstOrDefault();
+                return JsonConvert.DeserializeObject<List<BasicDetails>>(responseBody);
             }
         }
 
-        public async Task<Details> GetDetailsFromSubRegionAsync(string subRegionName)
+        public async Task<List<BasicDetails>> GetDetailsFromSubRegionAsync(string subRegionName)
         {
             _uriBuilder.Reset();
-            var uriBuilder = _uriBuilder.WithSubRegionName(subRegionName).FilterByModel(typeof(Details));
+            var uriBuilder = _uriBuilder.WithSubRegionName(subRegionName).FilterByModel(typeof(BasicDetails));
 
             using (var client = new HttpClient())
             {
@@ -59,7 +59,7 @@ namespace Annexio.Clients
                 result.EnsureSuccessStatusCode();
                 var responseBody = await result.Content.ReadAsStringAsync();
 
-                return JsonConvert.DeserializeObject<List<Details>>(responseBody).FirstOrDefault();
+                return JsonConvert.DeserializeObject<List<BasicDetails>>(responseBody);
             }
         }
     }
