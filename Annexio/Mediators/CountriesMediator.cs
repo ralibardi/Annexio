@@ -35,9 +35,16 @@ namespace Annexio.Mediators
     public partial class CountriesMediator : ICountriesMediator
     {
         private readonly IDetailsHttpClient _detailsHttpClient;
-        public async Task<BasicDetails> GetCountryDetails(string countryName)
+        public async Task<CountryDetails> GetCountryDetailsByName(string countryName)
         {
-            var country = await _detailsHttpClient.GetDetailsFromCountryAsync(countryName);
+            var country = await _detailsHttpClient.GetDetailsFromCountryNameAsync(countryName);
+
+            return country;
+        }
+
+        public async Task<CountryDetails> GetCountryDetailsByCode(string countryCode)
+        {
+            var country = await _detailsHttpClient.GetDetailsFromCountryCodeAsync(countryCode);
 
             return country;
         }

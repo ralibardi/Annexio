@@ -1,8 +1,4 @@
-﻿@model Annexio.Models.BasicDetails
-@{
-    ViewBag.Title = "CountryDetails";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model Annexio.Models.CountryDetails
 
 <ul class="nav nav-tabs">
     <li class="nav-item">
@@ -49,7 +45,7 @@
             @foreach (var border in @Model.Borders)
             {
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    @border
+                    <a href=@Url.Action("CountryDetailsByCode", "Details", new { countryCode = @border })>@border</a>
                 </li>
             }
         </ul>

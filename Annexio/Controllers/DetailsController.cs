@@ -14,16 +14,23 @@ namespace Annexio.Controllers
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        // GET: Country BasicDetails
-        public async Task<ViewResult> CountryDetails(string countryName)
+        // GET: Country CountryDetailsByName
+        public async Task<ViewResult> CountryDetailsByName(string countryName)
         {
-            var country = await _mediator.GetCountryDetails(countryName);
-            country.Name = countryName;
+            var country = await _mediator.GetCountryDetailsByName(countryName);
 
             return View(country);
         }
 
-        // GET: Country BasicDetails
+        // GET: Country CountryDetailsByName
+        public async Task<ViewResult> CountryDetailsByCode(string countryCode)
+        {
+            var country = await _mediator.GetCountryDetailsByCode(countryCode);
+
+            return View(country);
+        }
+
+        // GET: Country CountryDetailsByName
         public async Task<ViewResult> RegionDetails(string regionName)
         {
             var region = await _mediator.GetRegionDetails(regionName);
@@ -32,7 +39,7 @@ namespace Annexio.Controllers
             return View(region);
         }
 
-        // GET: Country BasicDetails
+        // GET: Country CountryDetailsByName
         public async Task<ViewResult> SubRegionDetails(string subRegionName)
         {
             var subRegion = await _mediator.GetSubRegionDetails(subRegionName);

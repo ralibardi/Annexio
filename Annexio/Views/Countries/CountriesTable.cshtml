@@ -13,7 +13,7 @@
         {
         <tr class="table-dark">
             <td>
-                <a href=@Url.Action("CountryDetails", "Details", new { countryName = @country.Name })>@country.Name</a>
+                <a href=@Url.Action("CountryDetailsByName", "Details", new { countryName = @country.Name })>@country.Name</a>
             </td>
             <td>
                 <a href=@Url.Action("RegionDetails", "Details", new { regionName = @country.Region })>@country.Region</a>

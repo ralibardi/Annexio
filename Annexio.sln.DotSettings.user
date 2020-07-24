@@ -1,2 +1,9 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bf45f55e_002Decb0_002D478d_002Dbb1f_002De13997f44c35/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RestCountriesUriBuilderTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B872FEC7-626D-4872-8DE1-55F790871971::.NETFramework,Version=v4.7.2::Annexio.Tests.Builders.RestCountriesUriBuilderTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B872FEC7-626D-4872-8DE1-55F790871971::.NETFramework,Version=v4.7.2::Annexio.Tests.Controllers.CountriesControllerTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::B872FEC7-626D-4872-8DE1-55F790871971::.NETFramework,Version=v4.7.2::Annexio.Tests.Controllers.DetailsControllerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Annexio/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

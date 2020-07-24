@@ -31,6 +31,18 @@ namespace Annexio.Builders
             return this;
         }
 
+        public RestCountriesUriBuilder WithCountryCode(string countryCode)
+        {
+            var args = new[]
+            {
+                "alpha",
+                countryCode
+            };
+
+            _url.Append(string.Join("/", args));
+            return this;
+        }
+
         public RestCountriesUriBuilder WithRegionName(string regionName)
         {
             var args = new[]

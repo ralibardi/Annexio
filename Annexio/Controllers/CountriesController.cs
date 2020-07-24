@@ -23,7 +23,7 @@ namespace Annexio.Controllers
         {
             _countries = await _mediator.GetAllCountries();
 
-            if (pageIndex == null)
+            if (pageIndex == null || pageIndex == 0)
             {
                 pageIndex = 1;
             }

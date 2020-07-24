@@ -2,7 +2,7 @@
 
 namespace Annexio.Models
 {
-    public class BasicDetails : Country
+    public class CountryDetails : Country
     {
         public string Capital { get; set; }
         public long Population { get; set; }
