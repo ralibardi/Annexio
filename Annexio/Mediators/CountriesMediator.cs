@@ -69,7 +69,7 @@ namespace Annexio.Mediators
 
         public async Task<RegionDetails> GetSubRegionDetails(string subRegionName)
         {
-            var detailsList = await _detailsHttpClient.GetDetailsFromRegionAsync(subRegionName);
+            var detailsList = await _detailsHttpClient.GetDetailsFromSubRegionAsync(subRegionName);
 
             var region = new RegionDetails
             {
